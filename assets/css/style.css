@@ -1,0 +1,360 @@
+/* IMPORT CSS COLORS */
+@import url("colors.css");
+/* IMPORT FONT */
+@font-face{font-family:'Poetsen'; src:url(fonts/PoetsenOne-Regular.ttf);}
+@font-face{font-family:'Rodano'; src:url(fonts/Rodano.ttf);} 
+@font-face{font-family:'Concord'; src:url(fonts/Concord-W00-Regular.ttf);} 
+@font-face{font-family:'Gothic'; src:url(fonts/Got725Bd.ttf);} 
+
+html {
+  scroll-behavior: smooth;
+} 
+
+body {
+  color: #ffffff;
+  background-color: rgb(00, 00, 28);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.smooth {
+  transition: all 0.65s ease;
+}
+ 
+#content {
+  margin-top: 120px;
+  color: white;
+}
+
+.container > .jumbotron > h1 {
+  font-family: 'Concord', Sans-Serif;
+  margin-top: 40px;
+  margin-bottom: 0;
+  transition: all .2s ease-in-out;
+}
+
+.container > .jumbotron > h1:hover {
+  transform: scale(1.1);
+}
+
+.container > .jumbotron > p {
+  font-family: 'Concord', Sans-Serif;
+  margin-top: 0;
+  transition: all .2s ease-in-out;
+}
+
+.container > .jumbotron > p:hover {
+  transform: scale(1.1);
+}
+
+h2:hover {
+  opacity: 0.6;
+}
+
+#about {
+  margin-top: 100px;
+  transition: all .2s ease-in-out;
+}
+
+#about:hover {
+  margin-top: 95px;
+}
+
+#about > .container > .row > .col {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+
+#about > .container > .row > .col > p {
+  opacity: 0.8;
+}
+
+#projects {
+  margin-top: 100px;
+}
+
+#contact {
+  margin-top: 100px;
+  transition: all .2s ease-in-out;
+}
+
+#contact:hover {
+  margin-top: 95px;
+}
+
+#contact > .container > .row > .col {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+
+#ontheweb {
+  margin-top: 100px;
+}
+
+#ontheweb > .container > .row > .btn {
+  margin: 7px 0 7px 0 ;
+}
+
+@keyframes hide-top {
+  0%   {top:0;}
+  100%  {top:-300px;}
+}
+
+@keyframes show-top {
+  0%   {top:-300px;}
+  100%  {top:0;}
+}
+
+.hide-top {
+  animation-name: hide-top;
+  animation-duration: 1s;
+  top:-300px;
+}
+
+.show-top {
+  animation-name: show-top;
+  animation-duration: .5s;
+  top:0;
+}
+
+/* NAVBAR */
+.navbar    {
+  color: white;
+  /* box-shadow: 0 10px 40px 10px rgb(00, 00, 02); */
+  /* height: 48px; */
+}
+
+.navbar-brand {
+  font-size: 25px;
+  font-family: 'Concord', Sans-Serif;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar > .container > .x > a:hover {
+  /* opacity: 50%;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: rgba(0,255,255,0.5); */
+  text-shadow: 0px 0px 20px rgba(0,255,255,1);
+}
+
+.navbar-toggler:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0,255,255,0.5);
+  background-color: rgb(12, 22, 38);
+}
+
+.navbar-toggler:active {
+  background-color: rgb(42, 32, 78);
+  transform: scale(0.8);
+}
+
+.navbar-toggler:after {
+  box-shadow: 0px 0px 5px 1px rgba(0,255,255,0.5);
+  transform: scale(0.8);
+}
+
+.nav-item {
+  margin: 0px 10px 0px 10px;
+  /* text-transform: uppercase; */
+  font-family: 'Concord', Sans-Serif;
+}
+
+.nav-link {
+  position: relative;
+  color: white;
+  border-radius: 20px;
+  transition: all .1s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #00ffff;
+  color: black;
+  box-shadow: 0px 0px 5px 1px rgba(0,255,255,0.9);
+  font-weight: 700;
+}
+
+.nav-link:active {
+  background-color: #005858;
+  transform: scale(0.8);
+  color: blue;
+  box-shadow: 0px 0px 5px 1px rgba(0,255,255,0.9);
+}
+
+.active {
+  color: rgba(0,255,255,1);
+}
+
+
+
+/* CONTENT */
+.img-thumb {
+  box-shadow: 0px 0px 30px 2px rgba(0, 255, 255, 0.5);
+  background-color: red;
+  transition: all .2s ease-in-out;
+  
+}
+
+.img-thumb:hover {
+  box-shadow: 0px 0px 90px 2px rgba(0, 255, 255, 1);
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+.btn-contact {
+ margin-top: 20px;
+ margin-bottom: 20px;
+ color: white;
+ font-weight: 560;
+ font-family: 'Concord', Sans-Serif;
+ background-color: rgb(42, 72, 98);
+ border-color: rgb(42, 72, 98);
+ word-spacing: 2px;
+}
+
+.btn-contact:hover {
+ box-shadow: 0px 0px 10px 3px rgba(0,225,255,0.5);
+ background-color: rgb(42, 82, 128);
+ border-color: rgba(0, 255, 255, 0.5);
+ color: rgb(0,255,255);
+}
+
+.btn-contact:active {
+  transform: scale(0.9);
+}
+/*
+input[type=text]:hover {
+  box-shadow: 0px 0px 10px 3px rgba(0,225,255,0.7);
+  border-color: rgba(0,225,255,1);
+  background-color: #ffffff;
+}
+
+input[type=text]:focus {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 1px rgba(0,225,255,0.5);
+}
+
+input[type=email]:hover {
+  box-shadow: 0px 0px 10px 3px rgba(0,225,255,0.7);
+  border-color: rgba(0,225,255,1);
+}
+
+input[type=email]:focus {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 1px rgba(0,225,255,0.5);
+}
+*/
+.form-control:hover {
+  box-shadow: 0px 0px 10px 3px rgba(0,225,255,0.7);
+  border-color: rgba(0,225,255,1);
+}
+
+.form-control:focus {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 1px rgba(0,225,255,0.5);
+}
+
+.card {
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  transition: all .2s ease-in-out;
+}
+
+.card:hover {
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+.card > .d-flex{
+  color: white;
+  text-shadow: 0 0 30px #000000, 0 0 3px #0000ff;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  transition: all .2s ease-in-out;
+}
+
+.card > .d-flex:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.card > .d-flex:active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  box-shadow: 0px 0px 20px 1px rgba(0,185,185,0.5);
+  border: 1px solid rgba(0,185,185,0.5);
+  background-color: rgb(32, 62, 88);
+}
+
+.dropdown-item {
+  border-radius: 8px;
+}
+
+.dropdown-item:active {
+  transform: scale(0.9);  
+}
+
+.lynn {
+  transition: all .3s ease-in-out;
+}
+
+.lynn:hover {
+  box-shadow: 0px 0px 20px 3px rgba(0,225,255,0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FOR LOADING CONTACT */
+
+svg {
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+circle:nth-of-type(1) { fill: #ffffff; }
+circle:nth-of-type(2) { fill: #fcd837; }
+circle:nth-of-type(3) { fill: #f9a11f; }
+circle:nth-of-type(4) { fill: #f27c21; }
+
+
+@keyframes colorTextContactAnimation {
+  0%   {fill: #f27c21;}
+  50%   {fill: #ffffff;}
+  100% {fill: #f27c21;}
+}
+
+.text-contact {
+  font-family: 'Concord',Helvetica Neue,Helvetica,Arial;
+  font-size: 23px;
+  animation-name: colorTextContactAnimation;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: forward;
+}
+
+ 
+ .list-group-item {
+   background-color: rgb(32, 42, 68);
+   color: white;
+   border-color: rgb(100,100,100);
+ }
+ 

@@ -1,0 +1,173 @@
+/* IMPORT CSS COLORS */
+@import url("colors.css");
+/* IMPORT FONT */
+@font-face{font-family:'Poetsen'; src:url(fonts/PoetsenOne-Regular.ttf);}
+@font-face{font-family:'Rodano'; src:url(fonts/Rodano.ttf);} 
+@font-face{font-family:'Concord'; src:url(fonts/Concord-W00-Regular.ttf);} 
+@font-face{font-family:'Gothic'; src:url(fonts/Got725Bd.ttf);} 
+
+html {
+  scroll-behavior: smooth;
+} 
+
+body {
+  color: #ffffff;
+  background-color: rgb(00, 00, 28);
+  height: 2000px;
+  width: 100%;
+  overflow: auto;
+}
+
+h2 {
+  font-family: 'Concord', Sans-Serif;
+}
+
+#wrap {
+  margin-top: 70px;
+  margin-bottom: 100%;
+}
+
+@keyframes hide-top {
+  0%   {top:0;}
+  100%  {top:-300px;}
+}
+
+@keyframes show-top {
+  0%   {top:-300px;}
+  100%  {top:0;}
+}
+
+@keyframes hide-bottom {
+  0%   {bottom:0;}
+  100%  {bottom:-300px;}
+}
+
+@keyframes show-bottom {
+  0%   {bottom:-300px;}
+  100%  {bottom:0;}
+}
+
+.hide-top {
+  animation-name: hide-top;
+  animation-duration: 1s;
+  top:-300px;
+}
+
+.show-top {
+  animation-name: show-top;
+  animation-duration: .5s;
+  top:0;
+}
+
+.hide-bottom {
+  animation-name: hide-bottom;
+  animation-duration: 1s;
+  bottom:-300px;
+}
+
+.show-bottom {
+  animation-name: show-bottom;
+  animation-duration: .5s;
+  bottom:0;
+}
+
+
+
+
+.navbar-brand {
+  font-size: 25px;
+  font-family: 'Concord', Sans-Serif;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: #eeeeee;
+  text-shadow: 0px 0px 20px rgba(0,255,255,1);
+}
+
+
+.nav-item {
+  margin: 0px 10px 0px 10px;
+  /* text-transform: uppercase; */
+  font-family: 'Concord', Sans-Serif;
+}
+
+.nav-link {
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  transition: all .1s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #00ffff;
+  color: black;
+  box-shadow: 0px 0px 5px 1px rgba(0,255,255,0.9);
+  font-weight: 700;
+}
+
+.nav-item-desktop > .active {
+  color: #00ffff;
+}
+
+ .nav-link-icons {
+   margin: 0;
+   padding: 2px 0 2px 0;
+   background-color: rgb(42, 52, 78);
+ }
+ 
+ .nav-link-icons:hover {;
+   background-color: rgb(72, 82, 118);
+   box-shadow: 0px 0px 10px 2px rgba(0,255,255,0.8);
+ }
+ 
+ .nav-item-mobile > .active {
+   background-color: rgb(72, 82, 118);
+ }
+ 
+ .nav-item-mobile > .active > .icons {
+   color: #00ffff;
+ }
+ 
+ .nav-link-icons > .icons {
+   font-size: 23px;
+   margin: 0;
+ }
+ 
+ .bg-content {
+   background-color: rgb(42, 52, 78);
+ }
+ 
+ table > thead > tr > th {
+   text-align: center;
+   font-family: 'Concord', Sans-Serif;
+   letter-spacing: 1px;
+ }
+ 
+ table > tbody > tr > td {
+   text-align: center;
+   vertical-align: middle;
+   color:#00ffff;
+ }
+ 
+ .card-text {
+   border-color: rgb(100,100,100);
+ }
+ 
+ .list-group-flush {
+   border-radius: 10px;
+}
+ 
+ .list-group-item {
+   background-color: rgb(32, 42, 68);
+   color: white;
+   border-color: rgb(100,100,100);
+   margin-left: 10px;
+   margin-right: 10px;
+ }
+ 
+ .text-income {
+   font-family: 'Concord', Sans-Serif;
+ }

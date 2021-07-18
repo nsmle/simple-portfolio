@@ -1,0 +1,28 @@
+.bg-bluedark {
+  color: white ;
+  background-color: rgb(22, 32, 48);
+}
+
+.bg-bluelight {
+  /* background-color: #000228; */
+  background-color: rgb(22, 32, 58);
+  color: white;
+}
+
+.bg-blue {
+  /* background-color: #000228; */
+  background-color: rgb(12, 22, 43);
+  color: white;
+}
+
+.bg-indigo {
+  background-color: rgb(12, 22, 43);
+}
+
+.bg-indie {
+  background-color: rgb(32, 42, 63);
+}
+
+.bg-modals {
+  background-color: rgb(42, 52, 73);
+}
