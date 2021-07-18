@@ -1,4 +1,4 @@
-# Simple-Portfolio for full stact web developer
+# Simple-Portfolio for full stack web developer
 
 This simple portfolio automatically sends an email when a contact arrives from this portfolio page. and can also directly reply to incoming contacts
 
