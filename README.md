@@ -10,6 +10,9 @@ Instead of using PHP's built-in mail() function. This simple portfolio uses the 
 - Contact the creator of the page via the email mechanism
 - Login multi user
 
+## Requirement
+You need the [PHPMailer](https://github.com/PHPMailer/PHPMailer) library for this simple application. If not, then some errors will occur
+
 ## Installation
 
 You can download [Simple-Portfolio as a zip file](https://github.com/nsmle/simple-portfolio/archive/master.zip).
@@ -27,3 +30,5 @@ or run
 ```bash
 composer require phpmailer/phpmailer
 ```
+
+## Configuration

@@ -33,13 +33,13 @@
 <section id="projects">
     <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">My Projects</h2>
-    
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 pb-5 pt-3">
-            <a class="col" data-bs-toggle="modal" data-bs-target="#projectModal" onclick="projectModal(<?= $data['project'][0]['id'] ?>)">
-                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<?= BASEURL ?>/assets/img/project/<?= $data['project'][0]['poster'] ?>');">
+            <?php foreach ($data['projects'] as $project): ?>
+            <a class="col col-md-6" data-bs-toggle="modal" data-bs-target="#projectModal" onclick="projectModal(<?= $project['id'] ?>)">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<?= BASEURL ?>/assets/img/project/<?= $project['poster'] ?>');">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h2 class="pt-5 mt-5 display-6 lh-1 fw-bold"><?= $data['project'][0]['name'] ?></h2>
-                        <?php if ( $data['project'][0]['status'] !== 'Production' ) { ?>
+                        <h2 class="pt-5 mt-5 display-6 lh-1 fw-bold"><?= $project['name'] ?></h2>
+                        <?php if ( $project['status'] !== 'Production' ) { ?>
                         <h6 class="mb-4 ">Coming soon</h6>
                         <?php } else { ?>
                         <h6 class="mb-4 ">Ready to try</h6>
@@ -49,81 +49,22 @@
                                 <img src="<?= BASEURL ?>/assets/img/fikipratama.jpg" alt="Fiki Pratama" width="32" height="32" class="rounded-circle border border-white">
                             </li>
                             <li class="d-flex align-items-center">
-                                <?php if ($data['project'][0]['status'] == 'Planning') { ?>
+                                <?php if ($project['status'] == 'Planning') { ?>
                                 <i class="bi bi-clipboard-minus me-2"></i>
-                                <?php } elseif ($data['project'][0]['status'] == 'Development') {  ?>
+                                <?php } elseif ($project['status'] == 'Development') {  ?>
                                 <i class="bi bi-braces me-2"></i>
-                                <?php } elseif ($data['project'][0]['status'] == 'Testing') {  ?>
+                                <?php } elseif ($project['status'] == 'Testing') {  ?>
                                 <i class="bi bi-journal-code me-2"></i>
-                                <?php } elseif ($data['project'][0]['status'] == 'Production') {  ?>
+                                <?php } elseif ($project['status'] == 'Production') {  ?>
                                 <i class="bi bi-mouse2-fill me-2"></i>
                                 <?php } ?>
-                                <small><?= $data['project'][0]['status'] ?></small>
+                                <small><?= $project['status'] ?></small>
                             </li>
                         </ul>
                     </div>
                 </div>
             </a>
-    
-            <a class="col col-md-6" data-bs-toggle="modal" data-bs-target="#projectModal" onclick="projectModal(<?= $data['project'][1]['id'] ?>)">
-                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<?= BASEURL ?>/assets/img/project/<?= $data['project'][1]['poster'] ?>');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h2 class="pt-5 mt-5 display-6 lh-1 fw-bold"><?= $data['project'][1]['name'] ?></h2>
-                        <?php if ( $data['project'][1]['status'] !== 'Production' ) { ?>
-                        <h6 class="mb-4 ">Coming soon</h6>
-                        <?php } else { ?>
-                        <h6 class="mb-4 ">Ready to try</h6>
-                        <?php } ?>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="<?= BASEURL ?>/assets/img/fikipratama.jpg" alt="Fiki Pratama" width="32" height="32" class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <?php if ($data['project'][1]['status'] == 'Planning') { ?>
-                                <i class="bi bi-clipboard-minus me-2"></i>
-                                <?php } elseif ($data['project'][1]['status'] == 'Development') {  ?>
-                                <i class="bi bi-braces me-2"></i>
-                                <?php } elseif ($data['project'][1]['status'] == 'Testing') {  ?>
-                                <i class="bi bi-journal-code me-2"></i>
-                                <?php } elseif ($data['project'][1]['status'] == 'Production') {  ?>
-                                <i class="bi bi-mouse2-fill me-2"></i>
-                                <?php } ?>
-                                <small><?= $data['project'][1]['status'] ?></small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </a>
-    
-            <a class="col col-md-6" data-bs-toggle="modal" data-bs-target="#projectModal" onclick="projectModal(<?= $data['project'][2]['id'] ?>)">
-                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<?= BASEURL ?>/assets/img/project/<?= $data['project'][2]['poster'] ?>');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h2 class="pt-5 mt-5 display-6 lh-1 fw-bold"><?= $data['project'][2]['name'] ?></h2>
-                        <?php if ( $data['project'][2]['status'] !== 'Production' ) { ?>
-                        <h6 class="mb-4 ">Coming soon</h6>
-                        <?php } else { ?>
-                        <h6 class="mb-4 ">Ready to try</h6>
-                        <?php } ?>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="<?= BASEURL ?>/assets/img/fikipratama.jpg" alt="Fiki Pratama" width="32" height="32" class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <?php if ($data['project'][2]['status'] == 'Planning') { ?>
-                                <i class="bi bi-clipboard-minus me-2"></i>
-                                <?php } elseif ($data['project'][2]['status'] == 'Development') {  ?>
-                                <i class="bi bi-braces me-2"></i>
-                                <?php } elseif ($data['project'][2]['status'] == 'Testing') {  ?>
-                                <i class="bi bi-journal-code me-2"></i>
-                                <?php } elseif ($data['project'][2]['status'] == 'Production') {  ?>
-                                <i class="bi bi-mouse2-fill me-2"></i>
-                                <?php } ?>
-                                <small><?= $data['project'][2]['status'] ?></small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

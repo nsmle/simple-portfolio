@@ -25,13 +25,14 @@ class usersModel {
         $created_at = date('Y-m-d H:i:s');
         $query = "INSERT INTO $this->tableUsers
                         VALUES
-                  ('', :name, :username, :email, :phone, :password, 'admin', :created_at, '', '')";
+                  ('', :name, :username, :email, :phone, :password, :role, :created_at, '', '')";
         $this->db->query($query);
         $this->db->bind('name', $name);
         $this->db->bind('username', $username);
         $this->db->bind('email', $email);
         $this->db->bind('phone', $phone);
         $this->db->bind('password', $password);
+        $this->db->bind('role', DEFAULT_ROLE_USER);
         $this->db->bind('created_at', $created_at);
         $this->db->execute();
         return $this->db->rowCount();

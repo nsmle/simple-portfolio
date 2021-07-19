@@ -101,7 +101,7 @@ function contact() {
   
   // AJAX FOR SEND DATA
   $.ajax({
-    url: 'http://localhost:8000/nsmle-project/home/contact',
+    url: '[YOUR_BASE_URL]/home/contact',
     data: {name : name, email : email, phone : phone, message : message},
     method: 'post',
     success: function(data){

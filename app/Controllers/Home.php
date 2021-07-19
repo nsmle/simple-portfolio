@@ -6,7 +6,7 @@ class Home extends Controller {
     {
         $data = [
           'title'   => 'Nsmle - Fiki Pratama',
-          'project' => $this->model('ProjectModel')->getAllProject()
+          'projects' => $this->model('ProjectModel')->getAllProject()
         ];
         $this->view('Layout/Header', $data);
         $this->view('Home/Index', $data);
