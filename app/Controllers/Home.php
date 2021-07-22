@@ -14,7 +14,7 @@ class Home extends Controller {
     }
     
     
-    // To acceot ajax contact
+    // To accept ajax contact
     public function contact()
   	{
       $name = $_POST['name'];

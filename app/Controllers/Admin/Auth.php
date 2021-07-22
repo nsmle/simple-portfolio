@@ -174,12 +174,53 @@ class Auth extends controller {
     
     
     // Featured Register
+    
+      
+    
     public function signup()
     {
       //Check REGISTRATION_FEATURE
       $this->authentication()->checkRegistrationFeature();
       
-      echo "signup";
+      $this->view('Admin/Auth/Layout/Header');
+      $this->view('Admin/Auth/SignUp');
+      $this->view('Admin/Auth/Layout/Footer');
+      
     }
     
+    public function signupverify()
+    {
+      $this->authentication()->checkRegistrationFeature();
+      
+      $name = $_POST['name'];
+      $username = $_POST['username'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $password = $_POST['password'];
+      $this->authentication()->activationRegistration($name, $username, $email, $phone, $password);
+    }
+    
+    public function activation()
+    {
+      // Check Feature Signup
+      $this->authentication()->checkRegistrationFeature();
+      
+      $this->view('Admin/Auth/Layout/Header');
+      $this->view('Admin/Auth/ActivationAccount');
+      $this->view('Admin/Auth/Layout/Footer');
+    }
+    
+    public function verifycodesignup()
+    {
+      //Check Feature Registration
+      $this->authentication()->checkRegistrationFeature();
+      
+      if ( isset($_POST['verifycode']) ) {
+        $verifyCode = $_POST['verifycode'];
+      } else {
+        $verifyCode = uriSegment(3);
+      }
+      
+      $this->authentication()->verifyCodeSignup($verifyCode);
+    }
 }

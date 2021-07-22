@@ -14,7 +14,7 @@ class App {
         if ( $url[0] == 'admin' ) {
           
             //CONTROLLER ADMIN
-            if ( file_exists('app/Controllers/Admin/' . $url[1] . '.php') ) {
+            if ( file_exists('app/Controllers/Admin/' . ucfirst($url[1]) . '.php') ) {
                 $this->controller = ucfirst($url[1]);
                 unset($url[1]);
             }

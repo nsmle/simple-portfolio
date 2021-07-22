@@ -54,7 +54,7 @@ class Authentication {
     public function checkRegistrationFeature()
     {
       if ( REGISTRATION_FEATURE == false ) {
-        header('Location: '. BASEURL . '/admin' );
+        header('Location: '. BASEURL . '/admin/auth/signin' );
       } else {
           // Check cookie('nsmle') if isset redirect to admin home page
           if ( !empty($_COOKIE['nsmle']) ) {
@@ -152,5 +152,65 @@ class Authentication {
         }
     }
     
+    // REGISTRATION FEATURE
+    
+    // Activation Account
+    public function activationRegistration($name, $username, $email, $phone, $password)
+    {
+      $user = $this->model('UsersModel')->getUserByUsername($username);
+      if ( empty($user) && $user !== "" ) {
+        
+        $_SESSION['name'] = base64_encode($name);
+        $_SESSION['username'] = base64_encode($username);
+        $_SESSION['email'] = base64_encode($email);
+        $_SESSION['phone'] = base64_encode($phone);
+        $_SESSION['password'] = base64_encode($password);
+        
+        $verifycode = bin2hex( random_bytes(10) );
+        $_SESSION['verifycode'] = password_hash($verifycode, PASSWORD_BCRYPT);
+        
+        // Send mail verify code signup
+        $this->Mails->verifyCode($email, $name, $phone, $verifycode);
+        
+        header("Location: " . BASEURL . '/admin/auth/activation' );
+      } else {
+        Flasher::setFlash('The username you selected is already in use. Please choose another username!', 'danger');
+        header('Location: '. BASEURL . '/admin/auth/signup');
+      }
+      
+    }
+    
+    // Verification Code for signup
+    public function verifyCodeSignup($verifycode)
+    {
+      if ( password_verify( $verifycode, $_SESSION['verifycode'] ) ) {
+        
+        $name = base64_decode($_SESSION['name']);
+        $username = base64_decode($_SESSION['username']);
+        $email = base64_decode($_SESSION['email']);
+        $phone = base64_decode($_SESSION['phone']);
+        $password = base64_decode($_SESSION['password']);
+        
+        if (!$this->model('UsersModel')->addUsers($name, $username, $email, $phone, $password) ) {
+          Flasher::setFlash("Sorry, we can't add your account!", 'danger');
+          header('Location: ' . BASEURL . '/admin/auth/signup');
+        }
+        
+        // Unset All Session Signup
+        unset($_SESSION['name']);
+        unset($_SESSION['username']);
+        unset($_SESSION['email']);
+        unset($_SESSION['phone']);
+        unset($_SESSION['password']);
+        unset($_SESSION['verifycode']);
+        
+        Flasher::setFlash('Thank you for registering. Please login to access your account.', 'primary');
+        header('Location: ' . BASEURL . '/admin/auth/signin');
+        
+      } else {
+        Flasher::setFlash("Sorry, we can't verify your code!", 'danger');
+        header('Location: ' . BASEURL . '/admin/auth/activation');
+      }
+    }
     
 }
