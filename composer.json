@@ -1,4 +1,14 @@
 {
+    "name": "nsmle/ssimple-portfolio",
+    "description": "Simple portfolio using native php, vanilla javascript and bootstrap 5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nsmle",
+            "email": "fikiproductionofficial@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
     "require": {
         "phpmailer/phpmailer": "^6.5"
     }
